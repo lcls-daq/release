@@ -41,6 +41,7 @@ szip_use       := /reg/common/package/szip/2.1
 psalg_use      := /reg/common/package/psalg/1.0.9
 pdsdata_use    := /reg/common/package/pdsdata/8.7.3
 hsd_use        := /reg/g/pcds/package/external/hsd/v0.0.0
+gsc16ai_use    := /reg/g/pcds/package/external/gsc16ai-2.1.68
 
 #
 #  *_use_include definitions will create a directory structure under build for
@@ -71,6 +72,8 @@ psalg_use_x86_64 := $(psalg_use)/x86_64-linux
 pdsdata_use_include:= $(pdsdata_use)/i386-linux-opt
 pdsdata_use_i386   := $(pdsdata_use)/i386-linux
 pdsdata_use_x86_64 := $(pdsdata_use)/x86_64-linux
+
+gsc16ai_use_include := $(gsc16ai_use)/driver
 
 projects :=
 
@@ -111,6 +114,7 @@ ifneq ($(filter pds, $(rprojects)),)
       usdusb4 \
       slsdet \
       hsd \
+      gsc16ai \
       pds \
       pdsapp
 
