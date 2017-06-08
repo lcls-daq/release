@@ -26,6 +26,7 @@ edt_use        := /reg/g/pcds/package/external/edt_R5.5.1.6
 leutron_use    := /reg/g/pcds/package/external/leutron_V00-00-00
 fli_use        := /reg/g/pcds/package/external/fli-dist-1.71
 andor_use      := /reg/g/pcds/package/external/andor-2.100.30026.0
+andor3_use     := /reg/g/pcds/package/external/andor-3.13.30001.0
 libusb_use     := /reg/g/pcds/package/external/libusb-1.0.21
 usdusb4_use    := /reg/g/pcds/package/external/usdusb4
 acqiris_use    := /reg/g/pcds/package/external/acqiris_3.3a
@@ -39,7 +40,7 @@ ndarray_use    := /reg/common/package/ndarray/1.1.3/x86_64-rhel5-gcc41-opt
 hdf5_use       := /reg/common/package/hdf5/1.8.17
 szip_use       := /reg/common/package/szip/2.1
 psalg_use      := /reg/common/package/psalg/1.0.9
-pdsdata_use    := /reg/common/package/pdsdata/8.7.3
+pdsdata_use    := /reg/common/package/pdsdata/8.7.4
 hsd_use        := /reg/g/pcds/package/external/hsd/v0.0.0
 gsc16ai_use    := /reg/g/pcds/package/external/gsc16ai-2.1.68
 
@@ -53,25 +54,31 @@ gsc16ai_use    := /reg/g/pcds/package/external/gsc16ai-2.1.68
 #
 boost_use_include    := $(boost_use)/include
 boost_use_lib_x86_64 := $(boose_use)/lib
+boost_use_lib_rhel7  := $(boose_use)/lib
 
 ndarray_use_include := $(ndarray_use)
 
 slsdet_use_include    := $(slsdet_use)/slsDetectorSoftware/include
 slsdet_use_lib_x86_64 := $(slsdet_use)/bin
+slsdet_use_lib_rhel7  := $(slsdet_use)/bin
 
 hdf5_use_include    := $(hdf5_use)/linux-x86_64/include
 hdf5_use_lib_x86_64 := $(hdf5_use)/linux-x86_64/lib
+hdf5_use_lib_rhel7  := $(hdf5_use)/rhel7-x86_64/lib
 
 szip_use_include    := $(szip_use)/x86_64-rhel5-gcc41-opt/include
 szip_use_lib_x86_64 := $(szip_use)/x86_64-rhel5-gcc41-opt/lib
+szip_use_lib_rhel7  := $(szip_use)/x86_64-rhel7-gcc48-opt/lib
 
 psalg_use_include:= $(psalg_use)/x86_64-linux-opt
 psalg_use_i386   := $(psalg_use)/i386-linux
 psalg_use_x86_64 := $(psalg_use)/x86_64-linux
+psalg_use_rhel7  := $(psalg_use)/x86_64-linux
 
 pdsdata_use_include:= $(pdsdata_use)/i386-linux-opt
 pdsdata_use_i386   := $(pdsdata_use)/i386-linux
 pdsdata_use_x86_64 := $(pdsdata_use)/x86_64-linux
+pdsdata_use_rhel7  := $(pdsdata_use)/x86_64-rhel7
 
 gsc16ai_use_include := $(gsc16ai_use)/driver
 
@@ -110,6 +117,7 @@ ifneq ($(filter pds, $(rprojects)),)
       relaxd \
       fli \
       andor \
+      andor3 \
       libusb \
       usdusb4 \
       slsdet \
