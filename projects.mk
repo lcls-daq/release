@@ -17,8 +17,7 @@ qt_use         := /reg/common/package/qt/4.8.4
 qwt_use        := /reg/g/pcds/package/external/qwt-5.1.1-wfopt-logfix
 #python_use     := /reg/g/pcds/package/python-2.5.2
 python_use     := /reg/common/package/python/2.5.5
-#python_use     := /reg/g/pcds/pkg_mgr/release/python/3.6.0/x86_64-rhel5-gcc41-opt
-#python_use     := /reg/g/pcds/pkg_mgr/release/python/3.6.0/x86_64-rhel7-gcc48-opt
+python3_use    := /reg/common/package/python/3.6.1
 libraw1394_use := /reg/g/pcds/package/external/libdc1394
 libdc1394_use  := /reg/g/pcds/package/external/libdc1394
 offlinedb_use  := /reg/g/pcds/package/external/offlinedb-1.5.2
@@ -102,7 +101,8 @@ projects += \
       szip \
       qwt \
       psalg \
-      python
+      python \
+      python3 \
 
 ifneq ($(filter pds, $(rprojects)),)
   projects += \
