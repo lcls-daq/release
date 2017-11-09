@@ -1,0 +1,15 @@
+[submodule "pgpcard"]
+	path = pgpcard
+	url = git@github.com:lcls-daq/pgpcard.git
+[submodule "pdsapp"]
+	path = pdsapp
+	url = git@github.com:lcls-daq/pdsapp.git
+[submodule "pds"]
+	path = pds
+	url = git@github.com:lcls-daq/pds.git
+[submodule "tools"]
+	path = tools
+	url = git@github.com:lcls-daq/tools.git
+[submodule "timetool"]
+	path = timetool
+	url = git@github.com:lcls-daq/timetool.git
