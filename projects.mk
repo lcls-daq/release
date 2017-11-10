@@ -39,7 +39,7 @@ ndarray_use    := /reg/common/package/ndarray/1.1.3/x86_64-rhel5-gcc41-opt
 hdf5_use       := /reg/common/package/hdf5/1.8.17
 szip_use       := /reg/common/package/szip/2.1
 psalg_use      := /reg/common/package/psalg/1.0.9
-pdsdata_use    := /reg/common/package/pdsdata/8.8.1
+pdsdata_use    := /reg/common/package/pdsdata/8.8.2
 hsd_use        := /reg/g/pcds/package/external/hsd/v0.0.0
 gsc16ai_use    := /reg/g/pcds/package/external/gsc16ai-2.1.68
 
