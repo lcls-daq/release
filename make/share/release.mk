@@ -104,10 +104,18 @@ endef
 
 $(foreach prj,$(projects),$(eval $(call project_template,$(prj))))
 
+ifeq ($(FAILONERR),true)
+define all-projects
+  for prj in $(projects); do     \
+    $(MAKE) $$prj.$* || exit $?; \
+  done
+endef
+else
 define all-projects
   for prj in $(projects); do \
     $(MAKE) $$prj.$*;        \
   done
 endef
+endif
 
 %:; @$(all-projects)
