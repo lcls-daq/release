@@ -1,15 +1,20 @@
 [submodule "pgpcard"]
 	path = pgpcard
 	url = git@github.com:lcls-daq/pgpcard.git
+	branch = master
 [submodule "pdsapp"]
 	path = pdsapp
 	url = git@github.com:lcls-daq/pdsapp.git
+	branch = master
 [submodule "pds"]
 	path = pds
 	url = git@github.com:lcls-daq/pds.git
+	branch = master
 [submodule "tools"]
 	path = tools
 	url = git@github.com:lcls-daq/tools.git
+	branch = master
 [submodule "timetool"]
 	path = timetool
 	url = git@github.com:lcls-daq/timetool.git
+	branch = master
