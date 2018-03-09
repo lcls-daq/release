@@ -42,6 +42,7 @@ psalg_use      := /reg/common/package/psalg/1.0.9
 pdsdata_use    := /reg/common/package/pdsdata/8.8.4
 hsd_use        := /reg/g/pcds/package/external/hsd/v0.0.2
 gsc16ai_use    := /reg/g/pcds/package/external/gsc16ai-2.1.68
+aesdriver_use  := /reg/g/pcds/package/aes-stream-drivers
 
 #
 #  *_use_include definitions will create a directory structure under build for
@@ -80,6 +81,8 @@ pdsdata_use_x86_64 := $(pdsdata_use)/x86_64-linux
 pdsdata_use_rhel7  := $(pdsdata_use)/x86_64-rhel7
 
 gsc16ai_use_include := $(gsc16ai_use)/driver
+
+aesdriver_use_include := $(aesdriver_use)/include
 
 projects :=
 
@@ -123,6 +126,7 @@ ifneq ($(filter pds, $(rprojects)),)
       slsdet \
       hsd \
       gsc16ai \
+      aesdriver \
       pds \
       pdsapp
 
