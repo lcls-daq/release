@@ -31,9 +31,9 @@ usdusb4_use    := /reg/g/pcds/package/external/usdusb4
 acqiris_use    := /reg/g/pcds/package/external/acqiris_3.3a
 relaxd_use     := /reg/g/pcds/package/external/relaxd-1.9.9
 pvcam_use      := /reg/g/pcds/package/external/pvcam2.7.1.7
-picam_use      := /reg/g/pcds/package/external/picam-2.6.1
+picam_use      := /reg/g/pcds/package/external/picam-5.5.3
 gsl_use        := /reg/g/pcds/package/external/gsl-1.13
-slsdet_use     := /reg/g/pcds/package/external/slsDetectorsPackage-3.0.0
+slsdet_use     := /reg/g/pcds/package/external/slsDetectorsPackage-3.1.1
 boost_use      := /reg/common/package/boost/1.49.0-python2.7/x86_64-rhel5-gcc41-opt/
 ndarray_use    := /reg/common/package/ndarray/1.1.8
 hdf5_use       := /reg/common/package/hdf5/1.8.17
@@ -91,11 +91,6 @@ ifeq ($(findstring x86_64-rhel6,$(tgt_arch)),)
 projects += qt
 endif
 
-# RHEL6 specific projects
-ifneq ($(findstring x86_64-rhel6,$(tgt_arch)),)
- projects += picam
-endif
-
 projects += \
       pdsdata \
       boost \
@@ -117,6 +112,7 @@ ifneq ($(filter pds, $(rprojects)),)
       offlinedb \
       libdc1394 \
       pvcam \
+      picam \
       relaxd \
       fli \
       andor \
