@@ -38,8 +38,9 @@ boost_use      := /reg/common/package/boost/1.49.0-python2.7/x86_64-rhel5-gcc41-
 ndarray_use    := /reg/common/package/ndarray/1.1.8
 hdf5_use       := /reg/common/package/hdf5/1.8.17
 szip_use       := /reg/common/package/szip/2.1
+zeromq_use		 := /reg/common/package/zeromq/4.1.5
 psalg_use      := /reg/common/package/psalg/1.0.9
-pdsdata_use    := /reg/common/package/pdsdata/8.9.0
+pdsdata_use    := /reg/common/package/pdsdata/8.9.1
 hsd_use        := /reg/g/pcds/package/external/hsd/v0.0.2
 gsc16ai_use    := /reg/g/pcds/package/external/gsc16ai-2.1.68
 aesdriver_use  := /reg/g/pcds/package/aes-stream-drivers
@@ -70,6 +71,10 @@ szip_use_include    := $(szip_use)/x86_64-rhel5-gcc41-opt/include
 szip_use_lib_x86_64 := $(szip_use)/x86_64-rhel5-gcc41-opt/lib
 szip_use_lib_rhel7  := $(szip_use)/x86_64-rhel7-gcc48-opt/lib
 
+zeromq_use_include    := $(zeromq_use)/x86_64-rhel5-gcc41-opt/include
+zeromq_use_lib_x86_64	:= $(zeromq_use)/x86_64-rhel5-gcc41-opt/lib
+zeromq_use_lib_rhel7  := $(zeromq_use)/x86_64-rhel7-gcc48-opt/lib
+
 psalg_use_include:= $(psalg_use)/x86_64-linux-opt
 psalg_use_i386   := $(psalg_use)/i386-linux
 psalg_use_x86_64 := $(psalg_use)/x86_64-linux
@@ -97,6 +102,7 @@ projects += \
       ndarray \
       hdf5 \
       szip \
+      zeromq \
       qwt \
       psalg \
       python \
