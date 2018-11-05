@@ -40,7 +40,7 @@ hdf5_use       := /reg/common/package/hdf5/1.8.17
 szip_use       := /reg/common/package/szip/2.1
 zeromq_use     := /reg/common/package/zeromq/4.1.5
 psalg_use      := /reg/common/package/psalg/1.0.9
-pdsdata_use    := /reg/common/package/pdsdata/8.9.8
+pdsdata_use    := /reg/common/package/pdsdata/8.9.9
 hsd_use        := /reg/g/pcds/package/external/hsd/v0.0.2
 gsc16ai_use    := /reg/g/pcds/package/external/gsc16ai-2.1.68
 aesdriver_use  := /reg/g/pcds/package/aes-stream-drivers
@@ -80,7 +80,7 @@ psalg_use_i386   := $(psalg_use)/i386-linux
 psalg_use_x86_64 := $(psalg_use)/x86_64-linux
 psalg_use_rhel7  := $(psalg_use)/x86_64-linux
 
-pdsdata_use_include:= $(pdsdata_use)/i386-linux-opt
+pdsdata_use_include:= $(pdsdata_use)/x86_64-rhel7-dbg
 pdsdata_use_i386   := $(pdsdata_use)/i386-linux
 pdsdata_use_x86_64 := $(pdsdata_use)/x86_64-linux
 pdsdata_use_rhel7  := $(pdsdata_use)/x86_64-rhel7
