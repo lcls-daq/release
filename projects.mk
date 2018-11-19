@@ -34,7 +34,7 @@ pvcam_use      := /reg/g/pcds/package/external/pvcam2.7.1.7
 picam_use      := /reg/g/pcds/package/external/picam-5.5.3
 gsl_use        := /reg/g/pcds/package/external/gsl-1.13
 slsdet_use     := /reg/g/pcds/package/external/slsDetectorsPackage-3.1.3
-boost_use      := /reg/common/package/boost/1.49.0-python2.7/x86_64-rhel5-gcc41-opt/
+boost_use      := /reg/g/pcds/pkg_mgr/release/boost/1.63.0
 ndarray_use    := /reg/common/package/ndarray/1.1.8
 hdf5_use       := /reg/common/package/hdf5/1.8.17
 szip_use       := /reg/common/package/szip/2.1
@@ -53,9 +53,9 @@ aesdriver_use  := /reg/g/pcds/package/aes-stream-drivers
 #    analogous soft-links for x86_64-linux-* libraries.
 #  Packages without a *_use_include definition will just have a soft-link under build.
 #
-boost_use_include    := $(boost_use)/include
-boost_use_lib_x86_64 := $(boose_use)/lib
-boost_use_lib_rhel7  := $(boose_use)/lib
+boost_use_include    := $(boost_use)/linux-x86_64/include
+boost_use_lib_x86_64 := $(boost_use)/linux-x86_64
+boost_use_lib_rhel7  := $(boost_use)/rhel7-x86_64
 
 ndarray_use_include := $(ndarray_use)
 
