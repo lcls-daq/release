@@ -15,9 +15,8 @@ epics_use      := /reg/g/pcds/package/external/epicsca-R3.14.12-0.4.0
 evgr_use       := /reg/g/pcds/package/external/evgr_V00-00-05
 qt_use         := /reg/common/package/qt/4.8.4
 qwt_use        := /reg/g/pcds/package/external/qwt-5.1.1-wfopt-logfix
-#python_use     := /reg/g/pcds/package/python-2.5.2
 python_use     := /reg/common/package/python/2.5.5
-python3_use    := /reg/common/package/python/3.6.1
+python3_use    := /reg/common/package/python/3.6.8
 libraw1394_use := /reg/g/pcds/package/external/libdc1394
 libdc1394_use  := /reg/g/pcds/package/external/libdc1394
 offlinedb_use  := /reg/g/pcds/package/external/offlinedb-1.5.2
@@ -63,6 +62,10 @@ slsdet_use_include    := $(slsdet_use)/slsDetectorSoftware/include
 slsdet_use_lib_x86_64 := $(slsdet_use)/bin
 slsdet_use_lib_rhel7  := $(slsdet_use)/bin
 
+python3_use_include    := $(python3_use)/include
+python3_use_lib_x86_64 := $(python3_use)/lib
+python3_use_lib_rhel7  := $(python3_use)/lib
+
 hdf5_use_include    := $(hdf5_use)/linux-x86_64/include
 hdf5_use_lib_x86_64 := $(hdf5_use)/linux-x86_64/lib
 hdf5_use_lib_rhel7  := $(hdf5_use)/rhel7-x86_64/lib
@@ -72,7 +75,7 @@ szip_use_lib_x86_64 := $(szip_use)/x86_64-rhel5-gcc41-opt/lib
 szip_use_lib_rhel7  := $(szip_use)/x86_64-rhel7-gcc48-opt/lib
 
 zeromq_use_include    := $(zeromq_use)/x86_64-rhel5-gcc41-opt/include
-zeromq_use_lib_x86_64	:= $(zeromq_use)/x86_64-rhel5-gcc41-opt/lib
+zeromq_use_lib_x86_64 := $(zeromq_use)/x86_64-rhel5-gcc41-opt/lib
 zeromq_use_lib_rhel7  := $(zeromq_use)/x86_64-rhel7-gcc48-opt/lib
 
 psalg_use_include:= $(psalg_use)/x86_64-linux-opt
