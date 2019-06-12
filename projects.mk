@@ -19,7 +19,7 @@ python_use     := /reg/common/package/python/2.5.5
 python3_use    := /reg/common/package/python/3.6.8
 libraw1394_use := /reg/g/pcds/package/external/libdc1394
 libdc1394_use  := /reg/g/pcds/package/external/libdc1394
-offlinedb_use  := /reg/g/pcds/package/external/offlinedb-1.5.2
+mysql_use      := /reg/g/pcds/package/external/mysql-5.5.62
 edt_use        := /reg/g/pcds/package/external/edt_R5.5.5.4
 leutron_use    := /reg/g/pcds/package/external/leutron_V00-00-00
 fli_use        := /reg/g/pcds/package/external/fli-dist-1.104
@@ -118,7 +118,7 @@ ifneq ($(filter pds, $(rprojects)),)
       leutron \
       edt \
       epics \
-      offlinedb \
+      mysql \
       libdc1394 \
       pvcam \
       picam \
