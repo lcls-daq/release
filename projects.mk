@@ -38,7 +38,7 @@ ndarray_use    := /reg/common/package/ndarray/1.1.8
 hdf5_use       := /reg/common/package/hdf5/1.8.17
 szip_use       := /reg/common/package/szip/2.1
 zeromq_use     := /reg/common/package/zeromq/4.1.5
-psalg_use      := /reg/common/package/psalg/1.0.9
+psalg_use      := /reg/common/package/psalg/1.0.11
 pdsdata_use    := /reg/common/package/pdsdata/8.9.11
 hsd_use        := /reg/g/pcds/package/external/hsd/v0.0.2
 gsc16ai_use    := /reg/g/pcds/package/external/gsc16ai-2.1.68
@@ -53,39 +53,47 @@ aesdriver_use  := /reg/g/pcds/package/aes-stream-drivers
 #  Packages without a *_use_include definition will just have a soft-link under build.
 #
 boost_use_include    := $(boost_use)/linux-x86_64/include
-boost_use_lib_x86_64 := $(boost_use)/linux-x86_64
-boost_use_lib_rhel7  := $(boost_use)/rhel7-x86_64
+boost_use_lib_x86_64 := $(boost_use)/linux-x86_64/lib
+boost_use_lib_rhel6  := $(boost_use)/rhel6-x86_64/lib
+boost_use_lib_rhel7  := $(boost_use)/rhel7-x86_64/lib
 
 ndarray_use_include := $(ndarray_use)
 
 slsdet_use_include    := $(slsdet_use)/slsDetectorSoftware/include
 slsdet_use_lib_x86_64 := $(slsdet_use)/bin
+slsdet_use_lib_rhel6  := $(slsdet_use)/bin
 slsdet_use_lib_rhel7  := $(slsdet_use)/bin
 
 python3_use_include    := $(python3_use)/include
 python3_use_lib_x86_64 := $(python3_use)/lib
+python3_use_lib_rhel6  := $(python3_use)/lib
 python3_use_lib_rhel7  := $(python3_use)/lib
 
 hdf5_use_include    := $(hdf5_use)/linux-x86_64/include
 hdf5_use_lib_x86_64 := $(hdf5_use)/linux-x86_64/lib
+hdf5_use_lib_rhel6  := $(hdf5_use)/rhel6-x86_64/lib
 hdf5_use_lib_rhel7  := $(hdf5_use)/rhel7-x86_64/lib
 
 szip_use_include    := $(szip_use)/x86_64-rhel5-gcc41-opt/include
 szip_use_lib_x86_64 := $(szip_use)/x86_64-rhel5-gcc41-opt/lib
+szip_use_lib_rhel6  := $(szip_use)/x86_64-rhel6-gcc44-opt/lib
 szip_use_lib_rhel7  := $(szip_use)/x86_64-rhel7-gcc48-opt/lib
 
-zeromq_use_include    := $(zeromq_use)/x86_64-rhel5-gcc41-opt/include
-zeromq_use_lib_x86_64 := $(zeromq_use)/x86_64-rhel5-gcc41-opt/lib
-zeromq_use_lib_rhel7  := $(zeromq_use)/x86_64-rhel7-gcc48-opt/lib
+zeromq_use_include    := $(zeromq_use)/linux-x86_64/include
+zeromq_use_lib_x86_64 := $(zeromq_use)/linux-x86_64/lib
+zeromq_use_lib_rhel6  := $(zeromq_use)/rhel6-x86_64/lib
+zeromq_use_lib_rhel7  := $(zeromq_use)/rhel7-x86_64/lib
 
 psalg_use_include:= $(psalg_use)/x86_64-linux-opt
 psalg_use_i386   := $(psalg_use)/i386-linux
 psalg_use_x86_64 := $(psalg_use)/x86_64-linux
-psalg_use_rhel7  := $(psalg_use)/x86_64-linux
+psalg_use_rhel6  := $(psalg_use)/x86_64-rhel6
+psalg_use_rhel7  := $(psalg_use)/x86_64-rhel7
 
-pdsdata_use_include:= $(pdsdata_use)/x86_64-rhel7-dbg
+pdsdata_use_include:= $(pdsdata_use)/x86_64-rhel7-opt
 pdsdata_use_i386   := $(pdsdata_use)/i386-linux
 pdsdata_use_x86_64 := $(pdsdata_use)/x86_64-linux
+pdsdata_use_rhel6  := $(pdsdata_use)/x86_64-rhel6
 pdsdata_use_rhel7  := $(pdsdata_use)/x86_64-rhel7
 
 gsc16ai_use_include := $(gsc16ai_use)/driver
@@ -93,11 +101,6 @@ gsc16ai_use_include := $(gsc16ai_use)/driver
 aesdriver_use_include := $(aesdriver_use)/include
 
 projects :=
-
-# RHEL6 has qt in its distribution
-ifeq ($(findstring x86_64-rhel6,$(tgt_arch)),)
-projects += qt
-endif
 
 projects += \
       pdsdata \
@@ -110,6 +113,7 @@ projects += \
       psalg \
       python \
       python3 \
+      qt
 
 ifneq ($(filter pds, $(rprojects)),)
   projects += \
