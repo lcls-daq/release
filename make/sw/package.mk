@@ -19,7 +19,9 @@ libdir  := $(RELEASE_DIR)/build/$(prj_name)/lib/$(tgt_arch)
 bindir  := $(RELEASE_DIR)/build/$(prj_name)/bin/$(tgt_arch)
 objdir  := $(RELEASE_DIR)/build/$(prj_name)/obj/$(tgt_arch)/$(pkg_name)
 depdir  := $(RELEASE_DIR)/build/$(prj_name)/dep/$(tgt_arch)/$(pkg_name)
-prod_dirs := $(strip $(bindir) $(libdir))
+pyenvdir  := $(RELEASE_DIR)/build/pyenv/$(tgt_arch)
+pymoddir  := $(RELEASE_DIR)/build/pyenv/$(tgt_arch)/$(prj_name)/$(pkg_name)
+prod_dirs := $(strip $(bindir) $(libdir) $(pyenvdir))
 temp_dirs  = $(strip $(sort $(foreach o,$(depends) $(objects),$(dir $(o)))))
 
 
@@ -32,6 +34,7 @@ libraries :=
 targets   :=
 objects   := 
 depends   :=
+pymodules :=
 getobjects = $(strip \
 	$(patsubst %.cc,$(1)/%.o,$(filter %.cc,$(2))) \
 	$(patsubst %.cpp,$(1)/%.o,$(filter %.cpp,$(2))) \
@@ -119,12 +122,19 @@ endef
 $(foreach tgt,$(tgtnames),$(eval $(call target_template,$(tgt))))
 $(foreach tgt,$(tgtnames),$(foreach obj,$(tgtsrcs_$(tgt)),$(eval $(call object_template,$(obj),$(tgtincs_$(tgt)),$(tgtsinc_$(tgt))))))
 
+define pymod_template
+  pymoddir_$(1) := $$(pyenvdir)/$$(prj_name)/$$(pkg_name)
+  pymodule_$(1) := $$(pymoddir_$(1))/$(1).py
+  pymodules     += $$(pymodule_$(1))
+endef
+
+$(foreach pymod,$(pymodnames),$(eval $(call pymod_template,$(pymod))))
 
 # Rules
 # -----
-rules := all dir obj lib bin clean cleanall userall userclean print
+rules := all dir obj lib pymod bin clean cleanall userall userclean print
 
-.PHONY: $(rules) $(libnames) $(tgtnames)
+.PHONY: $(rules) $(libnames) $(tgtnames) $(pymodnames)
 
 .SUFFIXES:  # Kills all implicit rules
 
@@ -134,7 +144,9 @@ obj: $(objects);
 
 lib: $(libraries);
 
-bin: lib $(targets);
+pymod: $(pymodules);
+
+bin: lib pymod $(targets);
 
 dir: $(prod_dirs) $(temp_dirs);
 
@@ -143,6 +155,7 @@ print:
 	@echo	"libdir    = $(libdir)"
 	@echo	"objdir    = $(objdir)"
 	@echo	"depdir    = $(depdir)"
+	@echo "pyenvdir  = $(pyenvdir)"
 	@echo   "targets   = $(targets)"
 	@echo	"libraries = $(libraries)"
 	@echo	"depends   = $(depends)"
@@ -167,6 +180,10 @@ ifneq ($(libraries),)
 	@echo "[RL] Removing libraries: $(notdir $(libraries))"
 	$(quiet)$(RM) $(libraries)
 endif
+ifneq ($(pymodules),)
+	@echo "[RL] Removing python modules: $(notdir $(pymodules))"
+	$(quiet)$(RM) $(pymodules)
+endif
 ifneq ($(targets),)
 	@echo "[RT] Removing targets: $(notdir $(targets))"
 	$(quiet)$(RM) $(targets)
@@ -185,6 +202,13 @@ $(prod_dirs) $(temp_dirs):
 $(libdir)/lib%.$(LIBEXTNS):
 	@echo "[LD] Build library $*"
 	$(quiet)$(LD) $(LDFLAGS) $(ifversnflags_$*) $(linkflags_$*) $^ -o $@
+
+
+# Python Libraries
+$(pymoddir)/%.py:
+	@echo "[LD] Build python module $*"
+	$(quiet)mkdir -p $(pymoddir_$*)
+	$(quiet)cp $*.py $@
 
 
 # Exceutables
