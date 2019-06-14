@@ -205,10 +205,10 @@ $(libdir)/lib%.$(LIBEXTNS):
 
 
 # Python Libraries
-$(pymoddir)/%.py:
+$(pymoddir)/%.py: %.py
 	@echo "[LD] Build python module $*"
 	$(quiet)mkdir -p $(pymoddir_$*)
-	$(quiet)cp $*.py $@
+	$(quiet)cp -f $< $@
 
 
 # Exceutables
