@@ -35,6 +35,7 @@ targets   :=
 objects   := 
 depends   :=
 pymodules :=
+pypackages:=
 getobjects = $(strip \
 	$(patsubst %.cc,$(1)/%.o,$(filter %.cc,$(2))) \
 	$(patsubst %.cpp,$(1)/%.o,$(filter %.cpp,$(2))) \
@@ -125,6 +126,7 @@ $(foreach tgt,$(tgtnames),$(foreach obj,$(tgtsrcs_$(tgt)),$(eval $(call object_t
 define pymod_template
   pymoddir_$(1) := $$(pyenvdir)/$$(prj_name)/$$(pkg_name)
   pymodule_$(1) := $$(pymoddir_$(1))/$(1).py
+  pypackages    += $$(pymoddir_$(1))
   pymodules     += $$(pymodule_$(1))
 endef
 
@@ -183,6 +185,10 @@ endif
 ifneq ($(pymodules),)
 	@echo "[RL] Removing python modules: $(notdir $(pymodules))"
 	$(quiet)$(RM) $(pymodules)
+endif
+ifneq ($(pypackages),)
+	@echo "[RL] Removing python packages: $(notdir $(pypackages))"
+	$(quiet)$(RM) -r $(pypackages)
 endif
 ifneq ($(targets),)
 	@echo "[RT] Removing targets: $(notdir $(targets))"
