@@ -74,6 +74,11 @@ python3_use_lib_x86_64 := $(python3_use)/lib
 python3_use_lib_rhel6  := $(python3_use)/lib
 python3_use_lib_rhel7  := $(python3_use)/lib
 
+python_use_include    := $(python_use)/include
+python_use_lib_x86_64 := $(python_use)/lib
+python_use_lib_rhel6  := $(python_use)/lib
+python_use_lib_rhel7  := $(python_use)/lib
+
 hdf5_use_include    := $(hdf5_use)/linux-x86_64/include
 hdf5_use_lib_x86_64 := $(hdf5_use)/linux-x86_64/lib
 hdf5_use_lib_rhel6  := $(hdf5_use)/rhel6-x86_64/lib
