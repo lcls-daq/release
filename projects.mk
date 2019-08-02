@@ -15,7 +15,7 @@ epics_use      := /reg/g/pcds/package/external/epicsca-R3.14.12-0.4.0
 evgr_use       := /reg/g/pcds/package/external/evgr_V00-00-05
 qt_use         := /reg/common/package/qt/4.8.4
 qwt_use        := /reg/g/pcds/package/external/qwt-5.1.1-wfopt-logfix
-python_use     := /reg/common/package/python/2.5.5
+python_use     := /reg/common/package/python/2.7.16
 python3_use    := /reg/common/package/python/3.6.8
 libraw1394_use := /reg/g/pcds/package/external/libdc1394
 libdc1394_use  := /reg/g/pcds/package/external/libdc1394
@@ -68,6 +68,11 @@ python3_use_include    := $(python3_use)/include
 python3_use_lib_x86_64 := $(python3_use)/lib
 python3_use_lib_rhel6  := $(python3_use)/lib
 python3_use_lib_rhel7  := $(python3_use)/lib
+
+python_use_include    := $(python_use)/include
+python_use_lib_x86_64 := $(python_use)/lib
+python_use_lib_rhel6  := $(python_use)/lib
+python_use_lib_rhel7  := $(python_use)/lib
 
 hdf5_use_include    := $(hdf5_use)/linux-x86_64/include
 hdf5_use_lib_x86_64 := $(hdf5_use)/linux-x86_64/lib
