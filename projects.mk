@@ -32,7 +32,7 @@ relaxd_use     := /reg/g/pcds/package/external/relaxd-1.9.9
 pvcam_use      := /reg/g/pcds/package/external/pvcam2.7.1.7
 picam_use      := /reg/g/pcds/package/external/picam-5.5.3
 gsl_use        := /reg/g/pcds/package/external/gsl-1.13
-slsdet_use     := /reg/g/pcds/package/external/slsDetectorsPackage-3.1.3
+slsdet_use     := /reg/g/pcds/package/external/slsDetectorsPackage-4.1.0
 boost_use      := /reg/g/pcds/pkg_mgr/release/boost/1.63.0
 ndarray_use    := /reg/common/package/ndarray/1.1.8
 hdf5_use       := /reg/common/package/hdf5/1.8.17
@@ -59,7 +59,7 @@ boost_use_lib_rhel7  := $(boost_use)/rhel7-x86_64/lib
 
 ndarray_use_include := $(ndarray_use)
 
-slsdet_use_include    := $(slsdet_use)/slsDetectorSoftware/include
+slsdet_use_include    := $(slsdet_use)/include
 slsdet_use_lib_x86_64 := $(slsdet_use)/bin
 slsdet_use_lib_rhel6  := $(slsdet_use)/bin
 slsdet_use_lib_rhel7  := $(slsdet_use)/bin
