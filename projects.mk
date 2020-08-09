@@ -42,7 +42,7 @@ psalg_use      := /reg/common/package/psalg/1.0.11
 pdsdata_use    := /reg/common/package/pdsdata/9.0.3
 hsd_use        := /reg/g/pcds/package/external/hsd/v0.0.2
 gsc16ai_use    := /reg/g/pcds/package/external/gsc16ai-2.1.68
-aesdriver_use  := /reg/g/pcds/package/slaclab/aes-stream-drivers/R5.7.0
+aesdriver_use  := /reg/g/pcds/package/slaclab/aes-stream-drivers/R5.14.2
 
 #
 #  *_use_include definitions will create a directory structure under build for
