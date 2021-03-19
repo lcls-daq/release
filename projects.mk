@@ -39,8 +39,8 @@ hdf5_use       := /reg/common/package/hdf5/1.8.17
 szip_use       := /reg/common/package/szip/2.1
 zeromq_use     := /reg/common/package/zeromq/4.1.5
 psalg_use      := /reg/common/package/psalg/1.0.11
-pdsdata_use    := /reg/common/package/pdsdata/9.1.0
-hsd_use        := /reg/g/pcds/package/external/hsd/v0.0.2
+pdsdata_use    := /reg/common/package/pdsdata/9.1.1
+hsd_use        := /reg/g/pcds/package/external/hsd/v2.0.0
 gsc16ai_use    := /reg/g/pcds/package/external/gsc16ai-2.1.68
 aesdriver_use  := /reg/g/pcds/package/slaclab/aes-stream-drivers/R5.14.2
 
