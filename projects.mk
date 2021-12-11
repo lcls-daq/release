@@ -31,15 +31,15 @@ acqiris_use    := /reg/g/pcds/package/external/acqiris_3.3a
 relaxd_use     := /reg/g/pcds/package/external/relaxd-1.9.9
 pvcam_use      := /reg/g/pcds/package/external/pvcam2.7.1.7
 picam_use      := /reg/g/pcds/package/external/picam-5.5.3
-gsl_use        := /reg/g/pcds/package/external/gsl-1.13
+gsl_use        := /reg/g/pcds/package/external/gsl-2.7.1
 slsdet_use     := /reg/g/pcds/package/external/slsDetectorsPackage-4.1.0
 boost_use      := /reg/g/pcds/pkg_mgr/release/boost/1.63.0
 ndarray_use    := /reg/common/package/ndarray/1.1.8
 hdf5_use       := /reg/common/package/hdf5/1.8.17
 szip_use       := /reg/common/package/szip/2.1
 zeromq_use     := /reg/common/package/zeromq/4.1.5
-psalg_use      := /reg/common/package/psalg/1.0.11
-pdsdata_use    := /reg/common/package/pdsdata/9.3.1
+psalg_use      := /reg/common/package/psalg/1.0.12
+pdsdata_use    := /reg/common/package/pdsdata/9.3.3
 hsd_use        := /reg/g/pcds/package/external/hsd/v2.0.0
 gsc16ai_use    := /reg/g/pcds/package/external/gsc16ai-2.1.68
 aesdriver_use  := /reg/g/pcds/package/slaclab/aes-stream-drivers/R5.14.2
@@ -148,6 +148,7 @@ ifneq ($(filter pds, $(rprojects)),)
       gsc16ai \
       aesdriver \
       vimba \
+      gsl \
       pds \
       pdsapp
 
