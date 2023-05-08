@@ -42,7 +42,7 @@ psalg_use      := /reg/common/package/psalg/1.0.12
 pdsdata_use    := /reg/common/package/pdsdata/9.3.4
 hsd_use        := /reg/g/pcds/package/external/hsd/v2.0.0
 gsc16ai_use    := /reg/g/pcds/package/external/gsc16ai-2.1.68
-aesdriver_use  := /reg/g/pcds/package/slaclab/aes-stream-drivers/R5.14.2
+aesdriver_use  := /reg/g/pcds/package/slaclab/aes-stream-drivers/v5.16.0
 vimba_use      := /reg/g/pcds/package/external/Vimba_6_0
 
 #
