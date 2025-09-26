@@ -41,7 +41,7 @@ zeromq_use     := /cds/sw/package/zeromq/4.1.5
 psalg_use      := /cds/sw/package/psalg/1.0.12
 pdsdata_use    := /cds/sw/package/pdsdata/10.1.3
 hsd_use        := /cds/group/pcds/package/external/hsd/v2.0.0
-gsc16ai_use    := /cds/group/pcds/package/external/gsc16ai-2.7.104.47
+gsc16ai_use    := /cds/group/pcds/package/external/gsc16ai-2.8.111.50
 aesdriver_use  := /cds/group/pcds/package/slaclab/aes-stream-drivers/v5.16.0
 vimba_use      := /cds/group/pcds/package/external/Vimba_6_0
 
