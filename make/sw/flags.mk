@@ -56,7 +56,7 @@ DEPFLAGS := -MM
 DEFINES  := -fPIC -D_REENTRANT -D__pentium__ -Wall
 CPPFLAGS :=
 CFLAGS   := -m64
-CXXFLAGS := $(CFLAGS) -std=c++11
+CXXFLAGS := $(CFLAGS) -std=c++11 -Wno-class-memaccess
 CASFLAGS := -x assembler-with-cpp -P $(CFLAGS)
 LDFLAGS  := -m64 -shared
 LXFLAGS  := -m64
