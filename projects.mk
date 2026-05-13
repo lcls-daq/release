@@ -44,6 +44,7 @@ hsd_use        := /cds/group/pcds/package/external/hsd/v2.0.0
 gsc16ai_use    := /cds/group/pcds/package/external/gsc16ai-2.8.111.50
 aesdriver_use  := /cds/group/pcds/package/slaclab/aes-stream-drivers/v5.16.0
 vimba_use      := /cds/group/pcds/package/external/VimbaX_2026-1
+zest_use       := /cds/group/pcds/package/external/ZestETM1
 
 #
 #  *_use_include definitions will create a directory structure under build for
@@ -152,6 +153,7 @@ ifneq ($(filter pds, $(rprojects)),)
       gsc16ai \
       aesdriver \
       vimba \
+      zest \
       gsl \
       pds \
       pdsapp
