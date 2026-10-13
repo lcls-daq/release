@@ -8,43 +8,55 @@ rprojects := $(wildcard *)
 #
 #  List external package base directories for convenience
 #
-#epics_use      := /cds/sw/package/epicsca/3.14.12
-#epics_use       := /cds/group/pcds/package/external/epicsca-pcds-R1.0-r410
-#  This one is compatible with our old compiler
-epics_use      := /cds/group/pcds/package/external/epicsca-R3.14.12-0.4.0
-evgr_use       := /cds/group/pcds/package/external/evgr_V00-00-05
-qt_use         := /cds/sw/package/qt/4.8.4
-qwt_use        := /cds/group/pcds/package/external/qwt-5.1.1-wfopt-logfix
-python_use     := /cds/sw/package/python/2.7.16
-python3_use    := /cds/sw/package/python/3.6.8
-libraw1394_use := /cds/group/pcds/package/external/libdc1394
-libdc1394_use  := /cds/group/pcds/package/external/libdc1394
-mysql_use      := /cds/group/pcds/package/external/mysql-5.5.62
-edt_use        := /cds/group/pcds/package/external/edt_R5.6.3.0
-leutron_use    := /cds/group/pcds/package/external/leutron_V00-00-00
-fli_use        := /cds/group/pcds/package/external/fli-dist-1.104
-andor_use      := /cds/group/pcds/package/external/andor-2.104.30088.0
-andor3_use     := /cds/group/pcds/package/external/andor-3.15.30126.0
-libusb_use     := /cds/group/pcds/package/external/libusb-1.0.21
-usdusb4_use    := /cds/group/pcds/package/external/usdusb4
-acqiris_use    := /cds/group/pcds/package/external/acqiris_3.3a
-relaxd_use     := /cds/group/pcds/package/external/relaxd-1.9.9
-pvcam_use      := /cds/group/pcds/package/external/pvcam2.7.1.7
-picam_use      := /cds/group/pcds/package/external/picam-5.15.11
-gsl_use        := /cds/group/pcds/package/external/gsl-2.7.1
-slsdet_use     := /cds/group/pcds/package/external/slsDetectorPackage-9.0.0
-boost_use      := /cds/group/pcds/pkg_mgr/release/boost/1.63.0
-ndarray_use    := /cds/sw/package/ndarray/1.1.12
-hdf5_use       := /cds/sw/package/hdf5/1.8.17
-szip_use       := /cds/sw/package/szip/2.1
-zeromq_use     := /cds/sw/package/zeromq/4.1.5
-psalg_use      := /cds/sw/package/psalg/1.0.12
-pdsdata_use    := /cds/sw/package/pdsdata/10.2.2
-hsd_use        := /cds/group/pcds/package/external/hsd/v2.0.0
-gsc16ai_use    := /cds/group/pcds/package/external/gsc16ai-2.8.111.50
-aesdriver_use  := /cds/group/pcds/package/slaclab/aes-stream-drivers/v5.16.0
-vimba_use      := /cds/group/pcds/package/external/VimbaX_2026-1
-zest_use       := /cds/group/pcds/package/external/ZestETM1
+ifneq ("$(wildcard /cds/group/pcds)","")
+	pkg_ext_dir    := /cds/group/pcds/package/external
+	pkg_mgr_dir    := /cds/group/pcds/pkg_mgr/release
+	pkg_sw_dir     := /cds/sw/package
+	pkg_int_dir    := /cds/sw/package
+	pkg_slac_dir   := /cds/group/pcds/package/slaclab
+	pkg_dist_dir   := /cds/group/pcds/dist/pds
+else
+	pkg_ext_dir    := /sdf/group/lcls/ds/daq/external
+	pkg_mgr_dir    := /sdf/group/lcls/ds/daq/external
+	pkg_sw_dir     := /sdf/group/lcls/ds/daq/external
+	pkg_int_dir    := /sdf/group/lcls/ds/daq
+	pkg_slac_dir   := /sdf/group/lcls/ds/daq/external
+	pkg_dist_dir   := /sdf/group/lcls/ds/daq
+endif
+epics_use      := $(pkg_ext_dir)/epicsca-R3.14.12-0.4.0
+evgr_use       := $(pkg_ext_dir)/evgr_V00-00-05
+qt_use         := $(pkg_sw_dir)/qt/4.8.4
+qwt_use        := $(pkg_ext_dir)/qwt-5.1.1-wfopt-logfix
+python_use     := $(pkg_sw_dir)/python/2.7.16
+python3_use    := $(pkg_sw_dir)/python/3.6.8
+libraw1394_use := $(pkg_ext_dir)/libdc1394
+libdc1394_use  := $(pkg_ext_dir)/libdc1394
+mysql_use      := $(pkg_ext_dir)/mysql-5.5.62
+edt_use        := $(pkg_ext_dir)/edt_R5.6.3.0
+leutron_use    := $(pkg_ext_dir)/leutron_V00-00-00
+fli_use        := $(pkg_ext_dir)/fli-dist-1.104
+andor_use      := $(pkg_ext_dir)/andor-2.104.30088.0
+andor3_use     := $(pkg_ext_dir)/andor-3.15.30126.0
+libusb_use     := $(pkg_ext_dir)/libusb-1.0.21
+usdusb4_use    := $(pkg_ext_dir)/usdusb4
+acqiris_use    := $(pkg_ext_dir)/acqiris_3.3a
+relaxd_use     := $(pkg_ext_dir)/relaxd-1.9.9
+pvcam_use      := $(pkg_ext_dir)/pvcam2.7.1.7
+picam_use      := $(pkg_ext_dir)/picam-5.15.11
+gsl_use        := $(pkg_ext_dir)/gsl-2.7.1
+slsdet_use     := $(pkg_ext_dir)/slsDetectorPackage-9.0.0
+boost_use      := $(pkg_mgr_dir)/boost/1.63.0
+ndarray_use    := $(pkg_int_dir)/ndarray/1.1.12
+hdf5_use       := $(pkg_sw_dir)/hdf5/1.8.17
+szip_use       := $(pkg_sw_dir)/szip/2.1
+zeromq_use     := $(pkg_sw_dir)/zeromq/4.1.5
+psalg_use      := $(pkg_int_dir)/psalg/1.0.12
+pdsdata_use    := $(pkg_int_dir)/pdsdata/10.2.2
+hsd_use        := $(pkg_ext_dir)/hsd/v2.0.0
+gsc16ai_use    := $(pkg_ext_dir)/gsc16ai-2.8.111.50
+aesdriver_use  := $(pkg_slac_dir)/aes-stream-drivers/v5.16.0
+vimba_use      := $(pkg_ext_dir)/VimbaX_2026-1
+zest_use       := $(pkg_ext_dir)/ZestETM1
 
 #
 #  *_use_include definitions will create a directory structure under build for
@@ -164,7 +176,7 @@ ifneq ($(filter pds, $(rprojects)),)
 else
   projects += \
       epics
-  timetool_use   := /cds/group/pcds/dist/pds/10.8.1-p10.1.0/build/timetool
+  timetool_use   := $(pkg_dist_dir)/10.8.1-p10.1.0/build/timetool
   timetool_use_include    := $(timetool_use)/include
   timetool_use_lib_x86_64 := $(timetool_use)/lib/x86_64-linux-opt
 endif
