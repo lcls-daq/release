@@ -8,7 +8,7 @@ rprojects := $(wildcard *)
 #
 #  List external package base directories for convenience
 #
-ifneq ("$(wildcard /cds/group/pcds)","")
+ifneq ("$(wildcard /cds/group/pcds/package)","")
 	pkg_ext_dir    := /cds/group/pcds/package/external
 	pkg_mgr_dir    := /cds/group/pcds/pkg_mgr/release
 	pkg_sw_dir     := /cds/sw/package
@@ -51,7 +51,7 @@ hdf5_use       := $(pkg_sw_dir)/hdf5/1.8.17
 szip_use       := $(pkg_sw_dir)/szip/2.1
 zeromq_use     := $(pkg_sw_dir)/zeromq/4.1.5
 psalg_use      := $(pkg_int_dir)/psalg/1.0.12
-pdsdata_use    := $(pkg_int_dir)/pdsdata/10.2.2
+pdsdata_use    := $(pkg_int_dir)/pdsdata/10.2.3
 hsd_use        := $(pkg_ext_dir)/hsd/v2.0.0
 gsc16ai_use    := $(pkg_ext_dir)/gsc16ai-2.8.111.50
 aesdriver_use  := $(pkg_slac_dir)/aes-stream-drivers/v5.16.0
@@ -70,6 +70,7 @@ boost_use_include    := $(boost_use)/linux-x86_64/include
 boost_use_lib_x86_64 := $(boost_use)/linux-x86_64/lib
 boost_use_lib_rhel6  := $(boost_use)/rhel6-x86_64/lib
 boost_use_lib_rhel7  := $(boost_use)/rhel7-x86_64/lib
+boost_use_lib_rhel8  := $(boost_use)/rhel8-x86_64/lib
 boost_use_lib_rhel9  := $(boost_use)/rhel9-x86_64/lib
 
 ndarray_use_include := $(ndarray_use)
@@ -78,36 +79,42 @@ slsdet_use_include    := $(slsdet_use)/include
 slsdet_use_lib_x86_64 := $(slsdet_use)/bin
 slsdet_use_lib_rhel6  := $(slsdet_use)/bin
 slsdet_use_lib_rhel7  := $(slsdet_use)/rhel7-x86_64/bin
+slsdet_use_lib_rhel8  := $(slsdet_use)/rhel8-x86_64/bin
 slsdet_use_lib_rhel9  := $(slsdet_use)/rhel9-x86_64/bin
 
 python_use_include    := $(python_use)/include
 python_use_lib_x86_64 := $(python_use)/lib
 python_use_lib_rhel6  := $(python_use)/lib
 python_use_lib_rhel7  := $(python_use)/lib
+python_use_lib_rhel8  := $(python_use)/lib
 python_use_lib_rhel9  := $(python_use)/lib
 
 python3_use_include    := $(python3_use)/include
 python3_use_lib_x86_64 := $(python3_use)/lib
 python3_use_lib_rhel6  := $(python3_use)/lib
 python3_use_lib_rhel7  := $(python3_use)/lib
+python3_use_lib_rhel8  := $(python3_use)/lib
 python3_use_lib_rhel9  := $(python3_use)/lib
 
 hdf5_use_include    := $(hdf5_use)/linux-x86_64/include
 hdf5_use_lib_x86_64 := $(hdf5_use)/linux-x86_64/lib
 hdf5_use_lib_rhel6  := $(hdf5_use)/rhel6-x86_64/lib
 hdf5_use_lib_rhel7  := $(hdf5_use)/rhel7-x86_64/lib
+hdf5_use_lib_rhel8  := $(hdf5_use)/rhel8-x86_64/lib
 hdf5_use_lib_rhel9  := $(hdf5_use)/rhel9-x86_64/lib
 
 szip_use_include    := $(szip_use)/linux-x86_64/include
 szip_use_lib_x86_64 := $(szip_use)/linux-x86_64/lib
 szip_use_lib_rhel6  := $(szip_use)/rhel6-x86_64/lib
 szip_use_lib_rhel7  := $(szip_use)/rhel7-x86_64/lib
+szip_use_lib_rhel8  := $(szip_use)/rhel8-x86_64/lib
 szip_use_lib_rhel9  := $(szip_use)/rhel9-x86_64/lib
 
 zeromq_use_include    := $(zeromq_use)/linux-x86_64/include
 zeromq_use_lib_x86_64 := $(zeromq_use)/linux-x86_64/lib
 zeromq_use_lib_rhel6  := $(zeromq_use)/rhel6-x86_64/lib
 zeromq_use_lib_rhel7  := $(zeromq_use)/rhel7-x86_64/lib
+zeromq_use_lib_rhel8  := $(zeromq_use)/rhel8-x86_64/lib
 zeromq_use_lib_rhel9  := $(zeromq_use)/rhel9-x86_64/lib
 
 psalg_use_include:= $(psalg_use)/x86_64-linux-opt
@@ -115,6 +122,7 @@ psalg_use_i386   := $(psalg_use)/i386-linux
 psalg_use_x86_64 := $(psalg_use)/x86_64-linux
 psalg_use_rhel6  := $(psalg_use)/x86_64-rhel6
 psalg_use_rhel7  := $(psalg_use)/x86_64-rhel7
+psalg_use_rhel8  := $(psalg_use)/x86_64-rhel8
 psalg_use_rhel9  := $(psalg_use)/x86_64-rhel9
 
 pdsdata_use_include:= $(pdsdata_use)/x86_64-rhel7-opt
@@ -122,6 +130,7 @@ pdsdata_use_i386   := $(pdsdata_use)/i386-linux
 pdsdata_use_x86_64 := $(pdsdata_use)/x86_64-linux
 pdsdata_use_rhel6  := $(pdsdata_use)/x86_64-rhel6
 pdsdata_use_rhel7  := $(pdsdata_use)/x86_64-rhel7
+pdsdata_use_rhel8  := $(pdsdata_use)/x86_64-rhel8
 pdsdata_use_rhel9  := $(pdsdata_use)/x86_64-rhel9
 
 gsc16ai_use_include := $(gsc16ai_use)/include

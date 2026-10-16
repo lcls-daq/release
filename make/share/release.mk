@@ -63,10 +63,12 @@ define build-ext-dir
   $(call build-libo-dir,$(1)/lib/x86_64-linux,$($(2)_use_x86_64)); \
   $(call build-libo-dir,$(1)/lib/x86_64-rhel6,$($(2)_use_rhel6)); \
   $(call build-libo-dir,$(1)/lib/x86_64-rhel7,$($(2)_use_rhel7)); \
+  $(call build-libo-dir,$(1)/lib/x86_64-rhel8,$($(2)_use_rhel8)); \
   $(call build-libo-dir,$(1)/lib/x86_64-rhel9,$($(2)_use_rhel9)); \
   $(call build-lib-dir,$(1)/lib/x86_64-linux,$($(2)_use_lib_x86_64)); \
   $(call build-lib-dir,$(1)/lib/x86_64-rhel6,$($(2)_use_lib_rhel6)); \
   $(call build-lib-dir,$(1)/lib/x86_64-rhel7,$($(2)_use_lib_rhel7)); \
+  $(call build-lib-dir,$(1)/lib/x86_64-rhel8,$($(2)_use_lib_rhel8)); \
   $(call build-lib-dir,$(1)/lib/x86_64-rhel9,$($(2)_use_lib_rhel9))
 endef
 
